@@ -1,8 +1,9 @@
 from requests import get
 from .headers import get_random_agent
 from urllib.parse import quote_plus
+import os
 
-GITHUB_API_KEY = "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"
+GITHUB_API_KEY = os.environ.get("GITHUB_API_KEy")
 
 
 def _request(query: str, num: int):
