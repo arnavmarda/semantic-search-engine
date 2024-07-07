@@ -1,9 +1,11 @@
 from requests import get
 from .headers import get_random_agent
 from urllib.parse import quote_plus
+from dotenv import load_dotenv
 import os
 
-GITHUB_API_KEY = os.environ.get("GITHUB_API_KEy")
+load_dotenv()
+GITHUB_API_KEY = str(os.environ.get("GITHUB_API_KEY"))
 
 
 def _request(query: str, num: int):
